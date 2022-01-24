@@ -1,12 +1,14 @@
 import React from "react";
 import Header from "../components/Header";
 import styled from "styled-components";
+import Portfolio from "../components/Portfolio";
 
 const Dashboard = ({ address }) => {
   return (
     <Wrapper>
       <MainContainer>
         <Header />
+        <Portfolio />
       </MainContainer>
     </Wrapper>
   );
