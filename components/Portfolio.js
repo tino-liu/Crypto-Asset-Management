@@ -4,7 +4,12 @@ import styled from "styled-components";
 const Portfolio = () => {
   return (
     <Wrapper>
-      <p>This is the Portfolio</p>
+      <Title>This is the Portfolio</Title>
+      <PortfolioTable>
+        <TableItem>
+          <Title> Your Assets</Title>
+        </TableItem>
+      </PortfolioTable>
     </Wrapper>
   );
 };
@@ -15,6 +20,7 @@ const Wrapper = styled.div`
   flex: 1;
   display: flex;
   justify-content: center;
+  padding-top: 1rem;
 `;
 
 const Title = styled.div`
