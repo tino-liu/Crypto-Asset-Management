@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+import Image from "next/image";
 import { BsThreeDotsVertical } from "react-icons/bs";
+import { coins } from "../static/coins";
 
 const Portfolio = () => {
   return (
@@ -15,36 +17,52 @@ const Portfolio = () => {
               <th>Balance</th>
               <th>Price</th>
               <th>Allocation</th>
-              <th>
-                <BsThreeDotsVertical />
-              </th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
-            <tr class="hover">
-              <th>5</th>
-              <td>Yancy Tear</td>
-              <td>Community Outreach Specialist</td>
-              <td>Indigo</td>
-            </tr>
-            <tr class="hover">
-              <th>6</th>
-              <td>Irma Vasilik</td>
-              <td>Editor</td>
-              <td>Purple</td>
-            </tr>
-            <tr class="hover">
-              <th>7</th>
-              <td>Meghann Durtnal</td>
-              <td>Staff Accountant IV</td>
-              <td>Yellow</td>
-            </tr>
-            <tr class="hover">
-              <th>8</th>
-              <td>Sammy Seston</td>
-              <td>Accountant I</td>
-              <td>Crimson</td>
-            </tr>
+            {coins.map((coins) => (
+              <>
+                <tr className="hover">
+                  <th>
+                    <div className="w-6 h-6">
+                      <Image src={coins.logo} alt={coins.name} />
+                    </div>
+                  </th>
+                  <td>
+                    {coins.name}
+                    <div className="text-sm text-gray-400">{coins.sign}</div>
+                  </td>
+                  <td>
+                    {"$"}
+                    {coins.balanceCoin}
+                    <div className="text-sm text-gray-400">
+                      {coins.balanceCoin}
+                    </div>
+                    <div className="text-sm text-gray-400">{coins.sign}</div>
+                  </td>
+                  <td>
+                    {"$"}
+                    {coins.priceUsd}
+                    <div
+                      style={{
+                        color: coins.change < 0 ? "#f0616d" : "#26ad75",
+                      }}
+                    >
+                      {coins.change > 0 && "+"}
+                      {coins.change}%
+                    </div>
+                  </td>
+                  <td>
+                    {coins.allocation}
+                    {"%"}
+                  </td>
+                  <td>
+                    <BsThreeDotsVertical />
+                  </td>
+                </tr>
+              </>
+            ))}
           </tbody>
         </table>
       </div>
@@ -65,14 +83,4 @@ const Wrapper = styled.div`
 const Title = styled.div`
   font-size: 1.5rem;
   font-weight: 600;
-`;
-
-const Content = styled.div`
-  width: 100%;
-  max-width: 1000px;
-  padding: 2rem 1rem;
-`;
-
-const Divider = styled.div`
-  border-bottom: 1px solid #282b2f;
 `;

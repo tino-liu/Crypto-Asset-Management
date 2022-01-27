@@ -16,7 +16,7 @@ const Header = () => {
 export default Header;
 
 const Wrapper = styled.div`
-  width: 100%;
+  width: calc(100% - 3rem);
   padding: 1rem 1.5rem;
   border-bottom: 1px solid #282b2f;
   display: flex;
@@ -26,7 +26,7 @@ const Wrapper = styled.div`
 const Title = styled.div`
   font-size: 2rem;
   font-weight: 600;
-  padding-right: 5rem;
+  flex: 1;
 `;
 
 const Details = styled.p`
