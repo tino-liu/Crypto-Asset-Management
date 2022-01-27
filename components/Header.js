@@ -29,14 +29,6 @@ const Title = styled.div`
   flex: 1;
 `;
 
-const Details = styled.p`
-  font-size: 1.2rem;
-  text-align: center;
-  margin-top: 4rem;
-  font-weight: 500;
-  color: #282b2f;
-`;
-
 // Buttons
 const ButtonsContainer = styled.div`
   display: flex;
