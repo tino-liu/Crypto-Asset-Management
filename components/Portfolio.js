@@ -25,7 +25,7 @@ const Portfolio = () => {
               <>
                 <tr className="hover">
                   <th>
-                    <div className="w-6 h-6">
+                    <div className=" w-8 h-8">
                       <Image src={coins.logo} alt={coins.name} />
                     </div>
                   </th>
@@ -83,4 +83,6 @@ const Wrapper = styled.div`
 const Title = styled.div`
   font-size: 1.5rem;
   font-weight: 600;
+  padding-left: 1.5rem;
+  padding-bottom: 1rem;
 `;

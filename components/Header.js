@@ -1,10 +1,17 @@
 import React from "react";
 import styled from "styled-components";
+import { useWeb3 } from "@3rdweb/hooks";
 
 const Header = () => {
+  const { address } = useWeb3();
+
   return (
     <Wrapper>
       <Title>Assets</Title>
+      <WalletLink>
+        <WalletTitle>Wallet Connected</WalletTitle>
+        <WalletAddress>{address}</WalletAddress>
+      </WalletLink>
       <ButtonsContainer>
         <BuySell>Buy / Sell</BuySell>
         <SendReceive>Send / Receive</SendReceive>
@@ -27,6 +34,25 @@ const Title = styled.div`
   font-size: 2rem;
   font-weight: 600;
   flex: 1;
+`;
+
+const WalletLink = styled.div`
+  font-size: 0.8rem;
+  border: 1px solid #282b2f;
+  border-radius: 50rem;
+  font-size: 1.2rem;
+  margin-right: 1rem;
+`;
+
+const WalletTitle = styled.div`
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+  color: #27ad75;
+  font-weight: 600;
+`;
+
+const WalletAddress = styled.div`
+  font-size: 0.8rem;
 `;
 
 // Buttons

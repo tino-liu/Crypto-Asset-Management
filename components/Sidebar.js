@@ -17,7 +17,7 @@ const Sidebar = () => {
           <>
             <NavItems>
               <NavIcon>{items.icon}</NavIcon>
-              <div className=" text-2xl">{items.title}</div>
+              <NavText>{items.title}</NavText>
             </NavItems>
           </>
         ))}
@@ -53,7 +53,6 @@ const NavItems = styled.span`
   cursor: pointer;
   display: flex;
   align-items: center;
-  font-size: 1.3rem;
   border-radius: 0.5rem;
   margin-bottom: 1.5rem;
   position: relative;
@@ -63,15 +62,21 @@ const NavItems = styled.span`
   height: 4rem;
   transition: 0.5s;
   :hover {
-    color: white;
+    color: #fff;
+    text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff;
   }
 `;
 
 const NavIcon = styled.div`
   background-color: #141519;
-  padding: 0.7rem;
+  padding: 0.6rem;
   border-radius: 50%;
   margin: 0 1rem;
   display: grid;
   place-items: center;
+`;
+
+const NavText = styled.div`
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 `;

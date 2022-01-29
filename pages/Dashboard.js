@@ -24,6 +24,7 @@ const Wrapper = styled.div`
   width: 100%;
   background-color: #0a0b0d;
   color: white;
+  overflow: hidden;
 `;
 
 const MainContainer = styled.div`
