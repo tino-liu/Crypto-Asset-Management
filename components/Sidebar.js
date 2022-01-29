@@ -63,7 +63,7 @@ const NavItems = styled.span`
   transition: 0.5s;
   :hover {
     color: #fff;
-    text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff;
+    text-shadow: 0 0 7px #b2f9fc, 0 0 10px #b2f9fc, 0 0 21px #b2f9fc;
   }
 `;
 

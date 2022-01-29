@@ -4,12 +4,12 @@ import Sidebar from "../components/Sidebar";
 import Header from "../components/Header";
 import Main from "../components/Main";
 
-const Dashboard = ({ address }) => {
+const Dashboard = ({ address, disconnectWallet }) => {
   return (
     <Wrapper>
       <Sidebar />
       <MainContainer>
-        <Header />
+        <Header walletAddress={address} disconnectWallet={disconnectWallet} />
         <Main />
       </MainContainer>
     </Wrapper>

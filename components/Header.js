@@ -1,18 +1,20 @@
 import React from "react";
 import styled from "styled-components";
-import { useWeb3 } from "@3rdweb/hooks";
 
-const Header = () => {
-  const { address } = useWeb3();
-
+const Header = ({ walletAddress, disconnectWallet }) => {
   return (
     <Wrapper>
       <Title>Assets</Title>
       <WalletLink>
         <WalletTitle>Wallet Connected</WalletTitle>
-        <WalletAddress>{address}</WalletAddress>
+        <WalletAddress>
+          {walletAddress.slice(0, 7)}...{walletAddress.slice(35)}
+        </WalletAddress>
       </WalletLink>
       <ButtonsContainer>
+        <SwitchWallet onClick={() => disconnectWallet()}>
+          Switch Wallet
+        </SwitchWallet>
         <BuySell>Buy / Sell</BuySell>
         <SendReceive>Send / Receive</SendReceive>
       </ButtonsContainer>
@@ -39,9 +41,14 @@ const Title = styled.div`
 const WalletLink = styled.div`
   font-size: 0.8rem;
   border: 1px solid #282b2f;
-  border-radius: 50rem;
+  border-radius: 10px;
   font-size: 1.2rem;
   margin-right: 1rem;
+  padding: 0.5rem 1rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;
 
 const WalletTitle = styled.div`
@@ -60,6 +67,58 @@ const ButtonsContainer = styled.div`
   display: flex;
 `;
 
+const SwitchWallet = styled.a`
+  cursor: pointer;
+  position: relative;
+  padding: 10px 30px;
+  margin: 0 15px;
+  color: #ff66e3;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 1.1rem;
+  transition: 0.5s;
+  overflow: hidden;
+  :hover {
+    background: #ff66e3;
+    color: #111;
+    box-shadow: 0 0 50px #ff66e3;
+    transition-delay: 0.5s;
+  }
+  ::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid #ff66e3;
+    border-right: 2px solid #ff66e3;
+    transition: 0.5s;
+    transition-delay: 0.5s;
+  }
+  :hover:before {
+    width: 100%;
+    height: 100%;
+  }
+  ::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    border-bottom: 2px solid #ff66e3;
+    border-left: 2px solid #ff66e3;
+    transition: 0.5s;
+    transition-delay: 0.5s;
+  }
+  :hover:after {
+    width: 100%;
+    height: 100%;
+  }
+`;
+
 const BuySell = styled.a`
   cursor: pointer;
   position: relative;
@@ -69,7 +128,7 @@ const BuySell = styled.a`
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 2px;
-  font-size: 20px;
+  font-size: 1.1rem;
   transition: 0.5s;
   overflow: hidden;
   :hover {
@@ -121,7 +180,7 @@ const SendReceive = styled.a`
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 2px;
-  font-size: 20px;
+  font-size: 1.1rem;
   transition: 0.5s;
   overflow: hidden;
   :hover {
