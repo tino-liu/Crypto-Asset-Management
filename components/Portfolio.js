@@ -3,13 +3,27 @@ import styled from "styled-components";
 import Image from "next/image";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { coins } from "../static/coins";
+import BalanceChart from "./BalanceChart";
 
 const Portfolio = () => {
   return (
     <Wrapper>
       <Title>This is your portfolio</Title>
-      <div class="overflow-x-auto">
-        <table class="table w-full">
+
+      <div className="overflow-x-auto">
+        <Chart>
+          <div>
+            <Balance>
+              <BalanceTitle>Portfolio Balance</BalanceTitle>
+              <BalanceValue>
+                {"$"}
+                {"400,213"}
+              </BalanceValue>
+            </Balance>
+          </div>
+          <BalanceChart />
+        </Chart>
+        <table className="table w-full">
           <thead>
             <tr>
               <th></th>
@@ -78,6 +92,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   padding-top: 1rem;
+  padding-bottom: 1rem;
 `;
 
 const Title = styled.div`
@@ -85,4 +100,22 @@ const Title = styled.div`
   font-weight: 600;
   padding-left: 1.5rem;
   padding-bottom: 1rem;
+`;
+
+const Chart = styled.div`
+  border: 1px solid #282b2f;
+  padding: 1rem 2rem;
+`;
+
+const Balance = styled.div``;
+
+const BalanceTitle = styled.div`
+  color: #8a919e;
+  font-size: 0.9rem;
+`;
+
+const BalanceValue = styled.div`
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0.5rem 0;
 `;
