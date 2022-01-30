@@ -1,10 +1,12 @@
 import styled from "styled-components";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import LogoImg from "../assets/logo.png";
 import { navItems } from "../static/navItems";
 
 const Sidebar = () => {
+  const [activeIcon, setActiveIcon] = useState(navItems[0].title);
+
   return (
     <Wrapper>
       <LogoContainer>
@@ -13,11 +15,22 @@ const Sidebar = () => {
         </Logo>
       </LogoContainer>
       <NavItemsContainer>
-        {navItems.map((items) => (
+        {navItems.map((items, index) => (
           <>
-            <NavItems>
-              <NavIcon>{items.icon}</NavIcon>
-              <NavText>{items.title}</NavText>
+            <NavItems key={index} onClick={() => setActiveIcon(items.title)}>
+              <NavIcon style={{ color: items.title === activeIcon && "#fff" }}>
+                {items.icon}
+              </NavIcon>
+              <NavText
+                style={{
+                  color: items.title === activeIcon && "#fff",
+                  textShadow:
+                    items.title === activeIcon &&
+                    "0 0 7px #b2f9fc, 0 0 10px #b2f9fc, 0 0 21px #b2f9fc",
+                }}
+              >
+                {items.title}
+              </NavText>
             </NavItems>
           </>
         ))}
