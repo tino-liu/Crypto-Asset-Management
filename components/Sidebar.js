@@ -23,10 +23,13 @@ const Sidebar = () => {
               </NavIcon>
               <NavText
                 style={{
-                  color: items.title === activeIcon && "#fff",
-                  textShadow:
-                    items.title === activeIcon &&
-                    "0 0 7px #b2f9fc, 0 0 10px #b2f9fc, 0 0 21px #b2f9fc",
+                  ...(items.title === activeIcon && {
+                    color: "#fff",
+                    color: items.title === activeIcon && "#fff",
+                    textShadow:
+                      items.title === activeIcon &&
+                      "0 0 7px #b2f9fc, 0 0 10px #b2f9fc, 0 0 21px #b2f9fc",
+                  }),
                 }}
               >
                 {items.title}
