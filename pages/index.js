@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <Wrapper>
       {address ? (
-        <Dashboard address={address} disconnectWallet={disconnectWallet} />
+        <Dashboard address={address} switchWallet={disconnectWallet} />
       ) : (
         <>
           <WelcomeTitle>Welcome to Tino's Crypto Asset Manager</WelcomeTitle>
