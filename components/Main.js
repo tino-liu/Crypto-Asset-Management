@@ -2,10 +2,14 @@ import React from "react";
 import styled from "styled-components";
 import Portfolio from "./Portfolio";
 
-const Main = () => {
+const Main = ({ thirdWebTokens, sanityTokens, walletAddress }) => {
   return (
     <Wrapper>
-      <Portfolio />
+      <Portfolio
+        walletAddress={walletAddress}
+        sanityTokens={sanityTokens}
+        thirdWebTokens={thirdWebTokens}
+      />
     </Wrapper>
   );
 };

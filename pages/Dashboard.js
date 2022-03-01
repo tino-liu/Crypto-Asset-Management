@@ -34,8 +34,8 @@ const Dashboard = ({ address, switchWallet }) => {
     return getSanityAndThirdWebTokens();
   }, []);
 
-  console.log("Sanity -> ", sanityTokens);
-  console.log("ThirdWeb -> ", thirdWebTokens);
+  // console.log("Sanity -> ", sanityTokens);
+  // console.log("ThirdWeb -> ", thirdWebTokens);
 
   return (
     <Wrapper>

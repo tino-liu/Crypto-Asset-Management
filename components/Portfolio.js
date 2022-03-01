@@ -5,7 +5,11 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 import { coins } from "../static/coins";
 import BalanceChart from "./BalanceChart";
 
-const Portfolio = () => {
+const Portfolio = ({ thirdWebTokens, sanityTokens, walletAddress }) => {
+  console.log("thirdweb -> ", thirdWebTokens);
+  console.log("sanity -> ", sanityTokens);
+  console.log("wallet -> ", walletAddress);
+
   return (
     <Wrapper>
       <Title>This is your portfolio</Title>
