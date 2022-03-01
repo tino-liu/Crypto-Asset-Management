@@ -17,8 +17,8 @@ export default function Home() {
               Connect Wallet
             </Button>
             <Details>
-              This is not a <br />
-              just-for-fun project
+              Please use <br />
+              Google Chrome
             </Details>
           </WalletConnect>
         </>

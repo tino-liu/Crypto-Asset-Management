@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const Header = ({ walletAddress, SwitchWallet }) => {
+const Header = ({ walletAddress, switchWallet }) => {
   return (
     <Wrapper>
       <Title>Assets</Title>
@@ -12,7 +12,7 @@ const Header = ({ walletAddress, SwitchWallet }) => {
         </WalletAddress>
       </WalletLink>
       <ButtonsContainer>
-        <SwitchWallet onClick={() => SwitchWallet()}>
+        <SwitchWallet onClick={() => switchWallet()}>
           Switch Wallet
         </SwitchWallet>
         <BuySell>Buy / Sell</BuySell>
