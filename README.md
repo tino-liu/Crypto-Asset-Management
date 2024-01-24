@@ -6,7 +6,6 @@ Let's talk a little about the goal of this project.
 
 1. Self improving!
 2. To understand how the crypto space works and put it to use.
-3. Land a job _cough_
 
 ## Basic Functionality
 
